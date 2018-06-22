@@ -1,6 +1,7 @@
 """
 _______________________________
 Author: Patrick Carlson
+Email: pats.carlson@gmail.com
 -------------------------------
 
 License: MIT License

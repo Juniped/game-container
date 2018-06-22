@@ -18,4 +18,4 @@ def start_logger():
 
 
 def get_logger():
-    return logging.get_logger("main-log")
+    return logging.getLogger("main-log")
