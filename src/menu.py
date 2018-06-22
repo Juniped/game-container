@@ -1,10 +1,12 @@
 import sys
 from utilities import log_helper, menu_strings
-from src import manager
+from src.manager import Manager
 # Get Logger
 log = log_helper.get_logger()
 
 test = None
+
+manager = Manager()
 
 
 def main_menu():
@@ -17,6 +19,8 @@ def main_menu():
             sys.exit()
         elif option == 1:
             deploy_menu()
+        elif option == 2:
+            manager.list_containers()
         else:
             print(f"You selected {option} which is not yet implemented")
 
@@ -31,6 +35,7 @@ def deploy_menu():
         if get_games(game_type) is "invalid":
             print(f"Invalid Game or not yet implemented, please select again")
         else:
+            # import pdb; pdb.set_trace()
             manager.deploy_container(game_type)
             fencepost = False
 
