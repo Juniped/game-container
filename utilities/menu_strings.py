@@ -29,7 +29,7 @@ invalid_input = f"You have entered an invalid input, please try again"
 game_types = ("""
 GAME TYPES
 ----------
-1) Terreria <Not Implemented>
+1) Terraria <Not Implemented>
 2) Garry's Mod <Not Implemented>
 3) CS:GO <Not Implemented>
 

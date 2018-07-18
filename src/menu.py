@@ -16,6 +16,7 @@ def main_menu():
         option = verify_input(input("> "), main_menu)
         if option == 0:
             print(f"Exiting program, thank you!")
+            manager.stop_all_containers()
             sys.exit()
         elif option == 1:
             deploy_menu()
@@ -26,16 +27,16 @@ def main_menu():
 
 
 def deploy_menu():
+    invalid_types = [2, 3]
     fencepost = True
     while(fencepost):
         print(menu_strings.game_types)
         game_type = verify_input(input("> "), deploy_menu)
         if game_type == 0:
             main_menu()
-        if get_games(game_type) is "invalid":
+        if game_type in invalid_types:
             print(f"Invalid Game or not yet implemented, please select again")
         else:
-            # import pdb; pdb.set_trace()
             manager.deploy_container(game_type)
             fencepost = False
 
@@ -46,10 +47,3 @@ def verify_input(input, menu):
     else:
         print(menu_strings.invalid_input)
         menu()
-
-
-def get_games(game_type):
-    if game_type == 1:
-        return "terraria"
-    else:
-        return "invalid"
