@@ -22,6 +22,8 @@ def main_menu():
             deploy_menu()
         elif option == 2:
             manager.list_containers()
+        elif option == 4:
+            get_server_info()
         else:
             print(f"You selected {option} which is not yet implemented")
 
@@ -47,3 +49,35 @@ def verify_input(input, menu):
     else:
         print(menu_strings.invalid_input)
         menu()
+
+
+def stop_server():
+    pass
+
+
+def get_server_info():
+    container_list = manager.get_container_info()
+    count = 1
+    for container in container_list:
+        print(f"{count}) {container.get('name')}")
+    option = verify_input(input("\n> "), get_server_info)
+    container = container_list[option - 1]
+    obj = container.get('container_object')
+    print(f"name {container.get('name')}")
+    print(f"STATUS: {obj.status}")
+    print(f"HOST PORT: {container.get('host_port')}")
+    print(f"INTERNAL PORT: {container.get('internal_port')}")
+    fencepost = True
+    while(fencepost):
+        logs = input("Would you like to view the logs? (y,n) > ")
+        logs = logs.lower()
+        if logs not in ["y", "n"]:
+            fencepost = True
+        else:
+            fencepost = False
+    if logs == "y":
+        print(f"Logs Start -----------------\n")
+        print(obj.logs(stdout=True))
+        print(f"Logs End -------------------\n")
+
+

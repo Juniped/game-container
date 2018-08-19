@@ -18,8 +18,10 @@ main_menu = ("""
 
 1) Deploy Server
 2) Show Running Servers
-3) Get Server Information
-4) Show Available Games
+3) Show All Servers
+4) Get Server Information
+5) Show Available Games
+
 
 0) Exit
 """)
@@ -29,9 +31,8 @@ invalid_input = f"You have entered an invalid input, please try again"
 game_types = ("""
 GAME TYPES
 ----------
-1) Terraria <Not Implemented>
-2) Garry's Mod <Not Implemented>
-3) CS:GO <Not Implemented>
+1) Garry's Mod <Not Implemented>
+2) CS:GO <Not Implemented>
 
 0) Back
 """)

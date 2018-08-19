@@ -1,3 +1,2 @@
-cat test.txt
-
-
+ls -la
+./TerrariaServer

@@ -7,6 +7,4 @@ WORKDIR /home/
 # Add contents of current directory to the home directory
 ADD . /home/
 
-# cat the test file in the directory
-RUN ./terraria.sh
-
+RUN ./TerrariaServer
